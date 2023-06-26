@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
@@ -17,10 +18,15 @@ class JudgementTest {
         Judgement judgement = new Judgement();
         int result = judgement.correctCount(computerNumbers, userNumbers);
 
-        Assertions.assertThat(result).isEqualTo(3);
+        assertThat(result).isEqualTo(3);
     }
 
     @Test
     void hasPosition() {
+        Judgement judgement = new Judgement();
+        boolean result = judgement.hasPosition(Arrays.asList(7,8,9), 0, 7);
+        boolean result2 = judgement.hasPosition(Arrays.asList(7,8,9), 0, 8);
+        assertThat(result).isTrue();
+        assertThat(result2).isFalse();
     }
 }

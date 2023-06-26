@@ -22,8 +22,14 @@ public class Judgement {
     }
 
 
-    public boolean hasPosition(int position, int number) {
-        return false;
+    public boolean hasPosition(List<Integer> computer, int positionIndex, int number) {
+        return computer.get(positionIndex) == number;
+        /*
+            if(computer.get(positionIndex) == number) {
+                return true;
+            }
+            return false;
+        */
     }
 
 }
